@@ -15,49 +15,52 @@
 # Caso a resposta a pergunta inicial tenha sido “sim” ou positiva de alguma forma, gere um valor aleatoriamente entre 1 e 6(você pode claro alterar essa faixa) e exiba o número no console para o usuário. Na sequência pergunte se ele(a) quer rodar o script novamente e trate essa situação para que continue rodando enquanto a resposta for positiva, fechando apenas quando for um “não”.
 
 import random
+class Showdice:
+    def __init__(self,num) -> None:
+        pass
 
-def show_dice(num):
-    if num == 1:
-        print("-----")
-        print("|   |")
-        print("| o |")
-        print("|   |")
-        print("-----")
+    def show_dice(num):
+        if num == 1:
+            print("-----")
+            print("|   |")
+            print("| o |")
+            print("|   |")
+            print("-----")
 
-    if num == 2:
-        print("-----")
-        print("|o  |")
-        print("|   |")
-        print("|  o|")
-        print("-----")
+        if num == 2:
+            print("-----")
+            print("|o  |")
+            print("|   |")
+            print("|  o|")
+            print("-----")
 
-    if num == 3:
-        print("-----")
-        print("|o  |")
-        print("| o |")
-        print("|  o|")
-        print("-----")
-    
-    if num == 4:
-        print("-----")
-        print("|o o|")
-        print("|   |")
-        print("|o o|")
-        print("-----")
-    
-    if num == 5:
-        print("-----")
-        print("|o o|")
-        print("| o |")
-        print("|o o|")
-        print("-----")
-    
-    if num == 6:
-        print("-----")
-        print("|o o|")
-        print("|o o|")
-        print("|o o|")
-        print("-----")
+        if num == 3:
+            print("-----")
+            print("|o  |")
+            print("| o |")
+            print("|  o|")
+            print("-----")
+        
+        if num == 4:
+            print("-----")
+            print("|o o|")
+            print("|   |")
+            print("|o o|")
+            print("-----")
+        
+        if num == 5:
+            print("-----")
+            print("|o o|")
+            print("| o |")
+            print("|o o|")
+            print("-----")
+        
+        if num == 6:
+            print("-----")
+            print("|o o|")
+            print("|o o|")
+            print("|o o|")
+            print("-----")
 
 
 print("|----------*-------------*----------|")
@@ -75,9 +78,9 @@ choice = input("\nDo you wanna roll a dice? Y/n: ")
 choice = choice.lower()
 while choice == "y":
     diceresult = random.randint(1,6)
+    Showdice.show_dice(diceresult)
     print("Your dice result is: {}" .format(diceresult))
-    diceimage = show_dice(diceresult)
-    choice = input ("Do yout wanna play again ?")
+    choice = input ("Do yout wanna play again? ")
     choice = choice.lower()
 if choice == "n":
     print("Thanks, see you next time, Bye!")
