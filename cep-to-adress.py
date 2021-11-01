@@ -1,9 +1,12 @@
 import requests
 import json
 
-end = '24416230'
+
+
+end = input("Digite o CEP: ")
+#end = '24416230'
 r = requests.get('https://cep.awesomeapi.com.br/json/'+end)
 z = r.text
 l = json.loads(z)
-print(type(l))
-print(l['city'],l['cep'])
+print(l)
+print(l['address_type'], l['address_name'],l['city'],l['district'],l['state'])
